@@ -1,3 +1,12 @@
+---
+title: SAP整体介绍及ABAP入门
+date: 2018-08-21 11:10:26
+tags: 
+	- SAP系统
+	- ABAP语言
+categories: SAP企业管理软件
+description: 
+---
 # SAP系统
  > System Applications and Products       
 <br/>
