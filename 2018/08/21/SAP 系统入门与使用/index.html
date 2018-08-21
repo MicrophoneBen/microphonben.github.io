@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, ghostben" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="SAP系统 System Applications and ProductsSAP 是全球企业管理软件与解决方案的技术领袖，同时也是市场领导者。30余年，通过其应用软件、服务与支持，SAP持续不断向全球各行业企业提供全面的企业级管理软件解决方案。随着以SAP为代表的新一代商业智能应用所受到企业用户的广泛青睐，SAP在中国用户的激增，具备最终用户或内部顾问应掌握的基本SAP技能的人才需求数量也相应增">
+<meta property="og:type" content="article">
+<meta property="og:title" content="zhBen Blog">
+<meta property="og:url" content="http://yoursite.com/2018/08/21/SAP 系统入门与使用/index.html">
+<meta property="og:site_name" content="zhBen Blog">
+<meta property="og:description" content="SAP系统 System Applications and ProductsSAP 是全球企业管理软件与解决方案的技术领袖，同时也是市场领导者。30余年，通过其应用软件、服务与支持，SAP持续不断向全球各行业企业提供全面的企业级管理软件解决方案。随着以SAP为代表的新一代商业智能应用所受到企业用户的广泛青睐，SAP在中国用户的激增，具备最终用户或内部顾问应掌握的基本SAP技能的人才需求数量也相应增">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-21T03:04:30.767Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="zhBen Blog">
+<meta name="twitter:description" content="SAP系统 System Applications and ProductsSAP 是全球企业管理软件与解决方案的技术领袖，同时也是市场领导者。30余年，通过其应用软件、服务与支持，SAP持续不断向全球各行业企业提供全面的企业级管理软件解决方案。随着以SAP为代表的新一代商业智能应用所受到企业用户的广泛青睐，SAP在中国用户的激增，具备最终用户或内部顾问应掌握的基本SAP技能的人才需求数量也相应增">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/21/SAP 系统入门与使用/"/>
+
+
+
+
+
+  <title> | zhBen Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">zhBen Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">一直在路上</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/21/SAP 系统入门与使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GhostBen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://pdfbk5gmm.bkt.clouddn.com/%E6%9B%B4%E4%BD%8E%E5%88%86%E8%BE%A8%E7%8E%87.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhBen Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-21T09:16:56+08:00">
+                2018-08-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/21/SAP 系统入门与使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/08/21/SAP 系统入门与使用/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="SAP系统"><a href="#SAP系统" class="headerlink" title="SAP系统"></a>SAP系统</h1><blockquote>
+<p>System Applications and Products<br><br><br>SAP 是全球<strong>企业管理软件</strong>与<strong>解决方案</strong>的技术领袖，同时也是市场领导者。30余年，通过其<strong>应用软件</strong>、服务与支持，SAP持续不断向全球各行业企业提供全面的企业级管理软件解决方案。随着以<a href="https://baike.baidu.com/item/SAP" target="_blank" rel="noopener">SAP</a>为代表的新一代商业智能应用所受到企业用户的广泛青睐，SAP在中国用户的激增，具备最终用户或内部顾问应掌握的基本SAP技能的人才需求数量也相应增加。</p>
+</blockquote>
+<h2 id="SAP官网系统教程"><a href="#SAP官网系统教程" class="headerlink" title="SAP官网系统教程"></a>SAP官网系统教程</h2><p>SAP的官网为我们提供了SAP开发的<a href="https://www.sap.com/china/developer/tutorial-navigator.html" target="_blank" rel="noopener"><strong>教程集合</strong></a>有可能需要注册。同时，我们了解到，SAP系统有自己的一套开发语言。我们先在这里了解一下ABAP语言。</p>
+<blockquote>
+<ul>
+<li>一，   什么是ABAP：<br> 定义：ABAP=Advanced business application program<br>   <br><br>   SAP最初开发ABAP/4语言仅为内部使用，为应用程序员提供优化的工作环境。经过不断的改进和修改以满足商业领域的需要。现在， ABAP/4 已成为SAP开发所有自己的应用程 序的仅有工具。<br>ABAP/4 是第四代支持结构化程序设计的语言。它合并了所有通常的控制结构和模块化概念。同时，它还支持面向对象的程序设计方法，这就为ABAP的应用开发开拓了更广阔的空间。而且，它还可以实现和其他编程语言的合成，如VB，JAVA，C/C++等。 </li>
+<li>二，   ABAP的一些特性：<br>ABAP包括：<br>ABAP/4 支持商业数据类型和操作。您可以用特殊日期和时间字段进行计算。 系统会自动执行必需的类型转换。<br>ABAP/4 包含一个叫 Open SQL 的SQL子集。用 Open SQL，您可以读取和访问数据库表，与所用的数据库系统无关<br>ABAP/4 允许您定义和调用子程序。也可以调用其他程序的子程序 。参数能够以各种方式从子程序传递或传递到子程序。<br>ABAP/4 包含一种特殊子程序，叫做功能模块。您可以在中央库中创建和维护功能模块。在调用程序和子程序之间功能模块有一个明确定义的数据接口。它们能够以调用程序的独立模式进行分别测试。<br>ABAP/4 报表程序用于分析数据库表中的数据。这种分析的结果可以显示在屏幕上或发送到打印机上。逻辑数据库支持报表程序。<br>ABAP/4将对话程序组织为包含对话模块的模块池。每个动态程序 （由一个屏幕及其流逻辑组成的<strong>动态程序</strong>）都基于一个ABAP/4 对话程序。流逻辑包含对 ABAP/4对话模块的调用。 </li>
+<li>三，   和ABAP相关联的SAP BASIS结构：<br>SAP R/3系统是一个典型的三层架构系统，包括：<br>表现层（Presentation Layer）：这是SAP用户和R/3系统交流的接口，用户在这一层对SAP系统进行操作。这层将用户的命令或者操作传送给R/3系统，然后系统进行相应的处理后把数据返还给用户。<br>应用层（Application layer）：这层包括一个或者多个应用服务器和一个消息服务器。每一个应用服务器包括一系列服务以便运行应用程序。所有的服务分置在这些应用服务器之中，其实用户需要的只是其中的一个应用服务器，多个服务器之间传递信息以决定用户到底需要的是哪个服务器的服务。<br>数据库层（Database layer）：这里就是SAP系统的核心，存放了所有SAP系统的数据。<br>SAP支持很多数据库系统，包括：Microsoft SQL Server，ORACLE，INFORMIX，DB2等主流数据库系统。 </li>
+<li>四.  ABAP的第一个程序：<br>好了，看了这么多，自己都晕了，还是言归正传来做开发吧。<br>首先要介绍一下事务代码（Transaction Code）的概念：<br>在SAP中，每一个功能基本上都对应了一个事务代码，你可以输入相应的事务代码来执行相应的功能，事务代码在SAP MENU下面的输入框中输入。 </li>
+</ul>
+</blockquote>
+<p> 第一个程序，HELLO WORLD： </p>
+<h3 id="用ABAP-REPORT来实现"><a href="#用ABAP-REPORT来实现" class="headerlink" title="用ABAP REPORT来实现:"></a>用ABAP REPORT来实现:</h3><ul>
+<li>1.进入SAP系统—〉SE38 。 </li>
+<li>2.输入程序名z_hello,选择Create 。 </li>
+</ul>
+<p>注意：自己开发的程序一定要用Z或者Y开头，这是因为SAP在升级的时候不会覆盖这些程序。 </p>
+<ul>
+<li>3.这时会弹出一个对话框，输入TITLE，选择Type为Executable program 。 </li>
+<li>4.然后又会弹出一个对话框，让你选择开发类（Package），如果你有自己的开发类的话，输入就可以，没有直接点下面的Local Object 。 </li>
+<li>5.ABAP编辑器出现了，输入代码： </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">“WRITE: &apos;HELLO,WORLD!&apos; .” 。</span><br></pre></td></tr></table></figure>
+<ul>
+<li>6.按Ctrl+F2:语法检查；Ctrl+F3：激活；F8：执行。 </li>
+<li>到这里，ABAP的第一个程序就写出来了，好简单！！！ </li>
+</ul>
+<h3 id="用-ABAP-DIALOG来实现："><a href="#用-ABAP-DIALOG来实现：" class="headerlink" title="用 ABAP DIALOG来实现："></a>用 ABAP DIALOG来实现：</h3><p>比较麻烦，在这里详细的介绍怎么建立SCREEN，以后就不介绍了 </p>
+<ul>
+<li>1.建立一个DIALOG程序，步骤同上，只不过在Type里选择Module pool，<br>假设程序名为：Z_SCREEN </li>
+<li>2.执行SE51,在Program里输入程序名称：Z_SCREEN；<br>在screen number里输入屏幕的号码: 9000 , 然后点Create </li>
+<li>3.在short description中输入你的描述：hello world screen </li>
+<li>4.点layout，调出屏幕编辑器，建立一个标签，输入hello world </li>
+<li>5.点激活，或者Ctrl+F3 </li>
+<li>6.执行SE93：建立事务代码：输入z_hello，点Create，会出现对话框，输入short text，选择Program and screen，然后输入你建立的程序名以及屏幕号，<br>这里是Z_SCREEN，9000 </li>
+<li>7.点保存，然后会出现对话框，选择LOCAL Object </li>
+</ul>
+<p>好了，执行z_hello，看到了吧，不过这个程序还没有退出的功能，后面会慢慢加上去的。<br>最后，综述：<br><strong>ABAP编程不是简单的编程，SAP中最主要的语言，一个是ABAP，一个是JAVA</strong></p>
+<ol>
+<li>ABAP以后的路应该往OO方向发展， </li>
+<li>还有JAVA方面，中国适应的太少，使用SAP集成的太多，什么ITS，等等，最新的BSP技术，也是以后ABAPER需要了解和掌握的。 </li>
+<li>开发包括几大部分，最简单的REPORT和DIALOG，还有很多其他的，比如WEB，WORKFLOW，BAPI，以及和其他PC系统的接口。 </li>
+<li>REPORT最简单的，最重要的，提高代码执行效率。（SD的报表是多多的，表也是大大的，月报表是运行慢慢的，以后发展的路就是提高SD报表运行的效率） </li>
+<li>DIALOG不常用的，除非你需要开发自己的一套系统，只是使用SAP平台。 </li>
+<li>WORKFLOW要和HR相结合的。所以你是需要理解HR的东西的 </li>
+<li>WEB东西就是更多了，EP只是一个平台，EP不能满足你所有的功能。最新的BSP技术是全新的，中国好象没有几家在用的。 </li>
+<li>BW是个模块，严格上来说，是不属于ABAPER的范围。</li>
+<li>SAP的技术是不断变化的，ABAPER哪个公司是不能少的，但是待遇就差了。</li>
+<li>我觉得以后的路就是，多多掌握开发技术，并且了解模块的东西，你不会实施，但是你了解。 </li>
+<li>还有出路就是做第三方接口，也是前途很大</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/17/前端知识/" rel="next" title="前端知识.md">
+                <i class="fa fa-chevron-left"></i> 前端知识.md
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://pdfbk5gmm.bkt.clouddn.com/%E6%9B%B4%E4%BD%8E%E5%88%86%E8%BE%A8%E7%8E%87.jpg"
+                alt="GhostBen" />
+            
+              <p class="site-author-name" itemprop="name">GhostBen</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/MicrophoneBen" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:MicrophoneBen@outlook.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/u/0/113862213567000032556" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/profile.php?id=100010674139349&lst=100010674139349%3A100010674139349%3A1534351792&sk=about" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com/users/9727105/" target="_blank" title="StackOverflow">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SAP系统"><span class="nav-number">1.</span> <span class="nav-text">SAP系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SAP官网系统教程"><span class="nav-number">1.1.</span> <span class="nav-text">SAP官网系统教程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用ABAP-REPORT来实现"><span class="nav-number">1.1.1.</span> <span class="nav-text">用ABAP REPORT来实现:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用-ABAP-DIALOG来实现："><span class="nav-number">1.1.2.</span> <span class="nav-text">用 ABAP DIALOG来实现：</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">GhostBen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://http-microphoneben-github-io.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/08/21/SAP 系统入门与使用/';
+          this.page.identifier = '2018/08/21/SAP 系统入门与使用/';
+          this.page.title = '';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://http-microphoneben-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '5wJjLvp4G1UsQ1npg2zEgSb7-gzGzoHsz',
+        appKey: 'LbMRMSFBUH3Da3c2zqstS240',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
