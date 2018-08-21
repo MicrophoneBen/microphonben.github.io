@@ -31,11 +31,6 @@
     <content type="text"><![CDATA[This is ghostben BlogWelcome to ghostben blog! This is one World. Check here to find me in github. If you get any problems when using myblog, you can ask me through 163mail 13715965769@163.com 欢迎来到ghostben的博客论坛，这是我们学习生活分享的乐园，你可以通过cliclk here在github上找到我，如果你在本论坛遇到任何问题，你可以通过邮箱13715965769@163.com找到我。]]></content>
   </entry>
   <entry>
-    <title><![CDATA[SpringBoot系列springboot_1]]></title>
-    <url>%2F2018%2F08%2F17%2Fspringboot_1%2F</url>
-    <content type="text"><![CDATA[一、Spring Boot 入门123public static void main (String [] args)&#123; System.out.println("Hello World");&#125; 1、Spring Boot 简介 简化Spring应用开发的一个框架； 整个Spring技术栈的一个大整合； J2EE开发的一站式解决方案； 2、微服务2014，由martin fowler提出 微服务：架构风格（服务微化） 一个应用应该是一组小型服务；可以通过HTTP的方式进行互通； 单体应用：ALL IN ONE 微服务：每一个功能元素最终都是一个可独立替换和独立升级的软件单元； 详细参照微服务文档 3、环境准备环境约束 jdk1.8：Spring Boot 推荐jdk1.7及以上；java version “1.8.0_172” maven3.x：maven 3.3以上版本；Apache Maven 3.5.4 IntelliJ IDEA 2018.2 (Ultimate Edition)Build #IU-182.3684.101, built on July 24, 2018JRE: 1.8.0_152-release-1248-b8 amd64JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.oWindows 10 10.0 SpringBoot 2.0.0.RELEASE：2.0.0； 统一环境；]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[springboot应用的部署]]></title>
     <url>%2F2018%2F08%2F16%2Fspringboot%E5%BA%94%E7%94%A8%E7%9A%84%E9%83%A8%E7%BD%B2%2F</url>
     <content type="text"><![CDATA[SpringBoot应用的打包发布接到同事的通知，说要把之前写好的应用打包发布到公司的服务器上，以便用户使用。可是按照常规的步骤执行之后一直有问题，在这里做记录，以后有需要使用的朋友可以借鉴。 环境 CentOs7.3及以上的Linux服务器 springboot应用，这里使用maven管理 jdk默认使用1.8及以上 IntellJ Idea 2018.2 限制 The default script supports most Linux distributions and is tested on CentOS and Ubuntu. Other platforms, such as OS X and FreeBSD, will require the use of a custom embeddedLaunchScript.当前文档适用于 CentOS and Ubuntu，其他平台需要定制脚本。详细参见springboot官方文档 步骤及方法添加maven打包依赖 我们这里演示的是使用maven作为项目依赖管理，如果使用其他项目依赖管理工具的，参见springboot官方文档)在maven的打包插件，添加依赖 1234567&lt;plugin&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt; &lt;configuration&gt; &lt;executable&gt;true&lt;/executable&gt; &lt;/configuration&gt;&lt;/plugin&gt; 打包应用 这里演示的是使用idea进行项目打包 应用转移到服务器端 使用ftp服务器拉取，或者直接托管到github再拉下来，方法很多，这里不再详述 拉取到本地服务器之后，要进行测试运行，然后再进行部署 我这里把文件拉取到了Share目录下，我是这样测试的 应用服务器端测试 首先确定服务器上安装的是jdk1.8,与我们的开发环境相对应就好了 1java -version 对打包好的应用进行测试。 123#根据官方文档，我们可以使用两种命令,这里的前提是都是在应用jar包的目录下1 ./yourApplication.jar2 java -jar yourApplication.jar 如果项目有使用数据库，要先进行数据库的安装配置，然后建立项目所需要的数据库以及数据表 然后就是测试运行 不能关闭终端，在浏览器输入你的项目运行端口测试。注意关闭服务器的防火墙，或者开放端口 测试成功了再进行下一步的部署安装 部署安装这里分两步。 首先把你的应用打包移动到var目录下 123456789sudo mv yourApplication.jar /var/#这里有可能要给文件赋予权限，最好还是加上，不然出错了，你根本不知道都什么原因chown -R * yourApplication.jar#切换到var目录查看文件cd /varll#这里会显示你的应用以及其他文件…… 建立一个软链接，让我们可以使用它，甚至开机启动 12345678ln -s /var/yourApplication.jar /etc/init.d/yourApp#建立好了软链接之后我们可以试一下系统有没有收录service yourApp start#失败会有很多报错的log输出，成功的话，在Centos会有提示，在Ubuntu16.04没有提示ss -lntup|grep 8899 (查看一下应用端口是否已经监听) 配置开机启动 添加服务开机自启 1chkconfig --add yourApp 查看一下是否添加成功 12345chkconfig --list （此时yourApp服务应该已经在列表中） service yourApp stop (手动停止服务) reboot （重启服务器） 重启服务器后，在查看一下应用端口，或者使用 jps命令， 如果看到你的应用名字，说明配置的spring boot应用开机自启成功 ， 应用输出控制台日志在 /var/log/yourApp.log 文件中。 完成应用部署，记录一下几个坑 检查jdk的版本很重要，一定要与你的开发环境一致 注意，当你使用自己安装的jdk时候，要把她链接到系统的一个执行路径上，否则会报 java not found 可以把他链接到 /usr/local/bin目录下这是系统运行的路径之一 数据库一点要配置正确，否则根本就没有办法运行应用 小心不要两次启动，会出现端口占用的情况。这时候要先停止，再启动.]]></content>
@@ -45,6 +40,18 @@
       <tags>
         <tag>springboot部署</tag>
         <tag>springboot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[SpringBoot系列springboot_1]]></title>
+    <url>%2F2018%2F08%2F15%2Fspringboot_1%2F</url>
+    <content type="text"><![CDATA[一、Spring Boot 入门123public static void main (String [] args)&#123; System.out.println("Hello World");&#125; 1、Spring Boot 简介 简化Spring应用开发的一个框架； 整个Spring技术栈的一个大整合； J2EE开发的一站式解决方案； 2、微服务2014，由martin fowler提出 微服务：架构风格（服务微化） 一个应用应该是一组小型服务；可以通过HTTP的方式进行互通； 单体应用：ALL IN ONE 微服务：每一个功能元素最终都是一个可独立替换和独立升级的软件单元； 详细参照微服务文档 3、环境准备环境约束 jdk1.8：Spring Boot 推荐jdk1.7及以上；java version “1.8.0_172” maven3.x：maven 3.3以上版本；Apache Maven 3.5.4 IntelliJ IDEA 2018.2 (Ultimate Edition)Build #IU-182.3684.101, built on July 24, 2018JRE: 1.8.0_152-release-1248-b8 amd64JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.oWindows 10 10.0 SpringBoot 2.0.0.RELEASE：2.0.0； 统一环境；]]></content>
+      <categories>
+        <category>springboot使用</category>
+      </categories>
+      <tags>
+        <tag>springboot</tag>
+        <tag>springboot(1)</tag>
       </tags>
   </entry>
 </search>
