@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
+    <title><![CDATA[SAP整体介绍及ABAP入门]]></title>
     <url>%2F2018%2F08%2F21%2FSAP%20%E7%B3%BB%E7%BB%9F%E5%85%A5%E9%97%A8%E4%B8%8E%E4%BD%BF%E7%94%A8%2F</url>
     <content type="text"><![CDATA[SAP系统 System Applications and ProductsSAP 是全球企业管理软件与解决方案的技术领袖，同时也是市场领导者。30余年，通过其应用软件、服务与支持，SAP持续不断向全球各行业企业提供全面的企业级管理软件解决方案。随着以SAP为代表的新一代商业智能应用所受到企业用户的广泛青睐，SAP在中国用户的激增，具备最终用户或内部顾问应掌握的基本SAP技能的人才需求数量也相应增加。 SAP官网系统教程SAP的官网为我们提供了SAP开发的教程集合有可能需要注册。同时，我们了解到，SAP系统有自己的一套开发语言。我们先在这里了解一下ABAP语言。 一， 什么是ABAP： 定义：ABAP=Advanced business application program SAP最初开发ABAP/4语言仅为内部使用，为应用程序员提供优化的工作环境。经过不断的改进和修改以满足商业领域的需要。现在， ABAP/4 已成为SAP开发所有自己的应用程 序的仅有工具。ABAP/4 是第四代支持结构化程序设计的语言。它合并了所有通常的控制结构和模块化概念。同时，它还支持面向对象的程序设计方法，这就为ABAP的应用开发开拓了更广阔的空间。而且，它还可以实现和其他编程语言的合成，如VB，JAVA，C/C++等。 二， ABAP的一些特性：ABAP包括：ABAP/4 支持商业数据类型和操作。您可以用特殊日期和时间字段进行计算。 系统会自动执行必需的类型转换。ABAP/4 包含一个叫 Open SQL 的SQL子集。用 Open SQL，您可以读取和访问数据库表，与所用的数据库系统无关ABAP/4 允许您定义和调用子程序。也可以调用其他程序的子程序 。参数能够以各种方式从子程序传递或传递到子程序。ABAP/4 包含一种特殊子程序，叫做功能模块。您可以在中央库中创建和维护功能模块。在调用程序和子程序之间功能模块有一个明确定义的数据接口。它们能够以调用程序的独立模式进行分别测试。ABAP/4 报表程序用于分析数据库表中的数据。这种分析的结果可以显示在屏幕上或发送到打印机上。逻辑数据库支持报表程序。ABAP/4将对话程序组织为包含对话模块的模块池。每个动态程序 （由一个屏幕及其流逻辑组成的动态程序）都基于一个ABAP/4 对话程序。流逻辑包含对 ABAP/4对话模块的调用。 三， 和ABAP相关联的SAP BASIS结构：SAP R/3系统是一个典型的三层架构系统，包括：表现层（Presentation Layer）：这是SAP用户和R/3系统交流的接口，用户在这一层对SAP系统进行操作。这层将用户的命令或者操作传送给R/3系统，然后系统进行相应的处理后把数据返还给用户。应用层（Application layer）：这层包括一个或者多个应用服务器和一个消息服务器。每一个应用服务器包括一系列服务以便运行应用程序。所有的服务分置在这些应用服务器之中，其实用户需要的只是其中的一个应用服务器，多个服务器之间传递信息以决定用户到底需要的是哪个服务器的服务。数据库层（Database layer）：这里就是SAP系统的核心，存放了所有SAP系统的数据。SAP支持很多数据库系统，包括：Microsoft SQL Server，ORACLE，INFORMIX，DB2等主流数据库系统。 四. ABAP的第一个程序：好了，看了这么多，自己都晕了，还是言归正传来做开发吧。首先要介绍一下事务代码（Transaction Code）的概念：在SAP中，每一个功能基本上都对应了一个事务代码，你可以输入相应的事务代码来执行相应的功能，事务代码在SAP MENU下面的输入框中输入。 第一个程序，HELLO WORLD： 用ABAP REPORT来实现: 1.进入SAP系统—〉SE38 。 2.输入程序名z_hello,选择Create 。 注意：自己开发的程序一定要用Z或者Y开头，这是因为SAP在升级的时候不会覆盖这些程序。 3.这时会弹出一个对话框，输入TITLE，选择Type为Executable program 。 4.然后又会弹出一个对话框，让你选择开发类（Package），如果你有自己的开发类的话，输入就可以，没有直接点下面的Local Object 。 5.ABAP编辑器出现了，输入代码： 1“WRITE: &apos;HELLO,WORLD!&apos; .” 。 6.按Ctrl+F2:语法检查；Ctrl+F3：激活；F8：执行。 到这里，ABAP的第一个程序就写出来了，好简单！！！ 用 ABAP DIALOG来实现：比较麻烦，在这里详细的介绍怎么建立SCREEN，以后就不介绍了 1.建立一个DIALOG程序，步骤同上，只不过在Type里选择Module pool，假设程序名为：Z_SCREEN 2.执行SE51,在Program里输入程序名称：Z_SCREEN；在screen number里输入屏幕的号码: 9000 , 然后点Create 3.在short description中输入你的描述：hello world screen 4.点layout，调出屏幕编辑器，建立一个标签，输入hello world 5.点激活，或者Ctrl+F3 6.执行SE93：建立事务代码：输入z_hello，点Create，会出现对话框，输入short text，选择Program and screen，然后输入你建立的程序名以及屏幕号，这里是Z_SCREEN，9000 7.点保存，然后会出现对话框，选择LOCAL Object 好了，执行z_hello，看到了吧，不过这个程序还没有退出的功能，后面会慢慢加上去的。最后，综述：ABAP编程不是简单的编程，SAP中最主要的语言，一个是ABAP，一个是JAVA ABAP以后的路应该往OO方向发展， 还有JAVA方面，中国适应的太少，使用SAP集成的太多，什么ITS，等等，最新的BSP技术，也是以后ABAPER需要了解和掌握的。 开发包括几大部分，最简单的REPORT和DIALOG，还有很多其他的，比如WEB，WORKFLOW，BAPI，以及和其他PC系统的接口。 REPORT最简单的，最重要的，提高代码执行效率。（SD的报表是多多的，表也是大大的，月报表是运行慢慢的，以后发展的路就是提高SD报表运行的效率） DIALOG不常用的，除非你需要开发自己的一套系统，只是使用SAP平台。 WORKFLOW要和HR相结合的。所以你是需要理解HR的东西的 WEB东西就是更多了，EP只是一个平台，EP不能满足你所有的功能。最新的BSP技术是全新的，中国好象没有几家在用的。 BW是个模块，严格上来说，是不属于ABAPER的范围。 SAP的技术是不断变化的，ABAPER哪个公司是不能少的，但是待遇就差了。 我觉得以后的路就是，多多掌握开发技术，并且了解模块的东西，你不会实施，但是你了解。 还有出路就是做第三方接口，也是前途很大]]></content>
+      <categories>
+        <category>SAP企业管理软件</category>
+      </categories>
+      <tags>
+        <tag>SAP系统</tag>
+        <tag>ABAP语言</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[前端知识.md]]></title>
