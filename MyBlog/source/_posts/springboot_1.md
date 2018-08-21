@@ -1,7 +1,12 @@
 ---
 title: SpringBoot系列springboot_1
+date: 2018-08-15 10:08:26
+tags: 
+	- springboot
+	- springboot(1)
+categories: springboot使用
+description: springboot(1)
 ---
-
 # 一、Spring Boot 入门
 
 ```java
